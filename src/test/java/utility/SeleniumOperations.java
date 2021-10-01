@@ -4,6 +4,7 @@ import java.util.Hashtable;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -194,6 +195,18 @@ public class SeleniumOperations
 			outputParameters.put("STATUS","FAIL");
 			outputParameters.put("MESSAGE", "Action:Validation, Input Given:"+inputParameters[1].toString());
 		}
+		return outputParameters;
+	}
+	
+	//arrowdown
+	public static Hashtable<String,Object> arrowdown(Object[]inputParameters)
+	{
+		String xpath=(String) inputParameters[0];
+		WebElement a=driver.findElement(By.xpath(xpath));
+		           a.sendKeys(Keys.ARROW_DOWN);
+		           a.sendKeys(Keys.ARROW_DOWN);
+		           a.sendKeys(Keys.ARROW_DOWN);
+		           a.sendKeys(Keys.ENTER);
 		return outputParameters;
 	}
 	
